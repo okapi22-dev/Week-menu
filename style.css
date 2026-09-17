@@ -1,0 +1,283 @@
+/*Zwarte rand om scherm*/
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0b1120;
+    color: #f1f5f9;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
+.main-dashboard {
+    width: 100%;
+    height: 100%;
+    background-color: #1e293b;
+    border-radius: 14px;
+    padding: 14px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid #334155;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #38bdf8;
+    letter-spacing: -0.01em;
+}
+
+header .subtitle {
+    font-size: 0.95rem;
+    color: #fcd34d;
+    font-weight: 600;
+    background: rgba(252, 211, 77, 0.1);
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid rgba(252, 211, 77, 0.2);
+}
+
+.section-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.pm-tag {
+    color: #fcd34d;
+    margin-left: 6px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+/* Bovenste zone: Vandaag (exact 25%) */
+.today-focus-section {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 25%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.today-schedule-list {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    height: 60%;
+}
+
+.meal-block {
+    background-color: #0f172a;
+    border-radius: 8px;
+    padding: 10px 12px;
+    border: 1px solid #334155;
+    border-top: 3px solid #3b82f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 0;
+    height: 100%;
+    transition: all 0.2s ease;
+}
+
+.meal-block.active-meal {
+    background-color: #172554;
+    border-color: rgba(251, 191, 36, 0.4);
+    border-top-color: #fbbf24;
+    border-top-width: 3px;
+    box-shadow: 0 0 18px rgba(251, 191, 36, 0.2);
+}
+
+/* Toegevoegd voor tijd + label naast elkaar */
+.meal-time-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.meal-time {
+    font-weight: 600;
+    font-size: 0.72rem;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.meal-block.active-meal .meal-time {
+    color: #fcd34d;
+}
+
+.meal-sublabel {
+    font-size: 0.65rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    flex-shrink: 0;
+}
+
+.meal-block.active-meal .meal-sublabel {
+    color: rgba(252, 211, 77, 0.85);
+}
+
+.meal-detail {
+    color: #f8fafc;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: auto 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+}
+
+.drink-block {
+    font-size: 0.62rem;
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 3px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 0;
+}
+
+/* Onderste zone: Volledige week (exact 75%) */
+.weekly-overview-section {
+    border-top: 1px solid #334155;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 60%;
+    min-height: 0px;
+    overflow: hidden;
+}
+
+.weekly-fullscreen-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap:30px;
+    flex: 1;
+    max-height: 675px;
+}
+
+.week-day-card {
+    background-color: #0f172a;
+    border: 2px solid #334155;
+    border-top: 10px solid #3b82f6;
+    border-radius: 5px;
+    padding: 10px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 675px;
+    overflow: hidden;
+}
+
+.week-day-card.current-day {
+    background-color: #172554;
+    border-color: rgba(251, 191, 36, 0.4);
+    border-top-color: #fbbf24;
+    border-top-width: 3px;
+    box-shadow: 0 0 16px rgba(251, 191, 36, 0.15);
+}
+
+.week-day-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    flex-shrink: 0;
+}
+
+.week-day-name {
+    font-size: 0.875rem;
+    color: #38bdf8;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.week-day-card.current-day .week-day-name {
+    color: #fbbf24;
+}
+
+.wk-pm {
+    color: #fcd34d;
+    font-size: 0.70rem;
+    display: block;
+    margin-top: 10px;
+    opacity: 0.85;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.wk-meals-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    max-height: 500px;
+    gap: 10px;
+}
+
+.wk-meal-row {
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1px 1px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    max-height: 75px;
+    overflow: hidden;
+    border: 5px solid rgba(15, 47, 228, 0.123);
+}
+
+.wk-time-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+}
+
+.wk-time {
+    color: #38bdf8;
+    font-weight: 400;
+}
+
+.wk-det {
+    color: #e2e8f0;
+    font-size: 0.875rem;
+    line-height: 20px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
