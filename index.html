@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eetschema 24" - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-dashboard">
+        <header>
+            <h1 id="screen-title">Eetschema Dashboard</h1>
+            <div class="subtitle" id="current-day-badge">Vandaag: -</div>
+        </header>
+
+        <!-- Bovenkant: Uitgebreid dagoverzicht van vandaag -->
+        <section class="today-focus-section">
+            <div class="section-label">Vandaag Uitgebreid: <span id="today-name-label">-</span> <span id="today-pm-label" class="pm-tag"></span></div>
+            <div class="today-schedule-list" id="today-schedule"></div>
+        </section>
+
+        <!-- Onderkant: Volledig 7-dagen overzicht -->
+        <section class="weekly-overview-section">
+            <div class="section-label">Volledig Weekoverzicht (Alle dagen)</div>
+            <div class="weekly-fullscreen-grid" id="full-weekly-grid"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
